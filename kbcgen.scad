@@ -8,7 +8,7 @@ wallThickness=3;
 wallRound=1;
 
 keyPlateRound=1;
-keyPlateMargin=0.2;
+keyPlateMargin=0.5;
 
 // Key plate
 color("#181B39")
@@ -43,7 +43,7 @@ difference() {
                 offset(r=2) offset(delta=-2)
                     square([15,8],false);
         // TRRS connector hole
-        translate([7*20-1.5, 2.8*20, 3+1+4])
+        translate([7*20-1.5, 2.5*20, 3+1+4])
             rotate([0,90,0])
             cylinder(r=4, h=10, center=true);
     }
