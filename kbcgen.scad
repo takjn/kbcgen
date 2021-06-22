@@ -43,9 +43,10 @@ difference() {
                 offset(r=2) offset(delta=-2)
                     square([15,8],false);
         // TRRS connector hole
-        translate([7*20-1.5, 2.5*20, 3+1+4])
-            rotate([0,90,0])
-            cylinder(r=4, h=10, center=true);
+        translate([7*20-5, 2.3*20, 3+1])
+            rotate([90,0,90]) linear_extrude(10)
+                offset(r=2) offset(delta=-2)
+                    square([13,8],false);
     }
 }
 
