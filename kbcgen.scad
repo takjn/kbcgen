@@ -1,9 +1,22 @@
 include <Round-Anything/polyround.scad>
 
-key_plate="svg/planck/bottom_plate.svg";
-key_holes="svg/planck/key_holes.svg";
-bottom_plate="svg/planck/bottom_plate.svg";
-screw_holes="svg/planck/screw_holes.svg";
+// Column staggered 60 keyboard
+key_plate="svg/ergo/key_plate.svg";
+key_holes="svg/ergo/key_holes.svg";
+bottom_plate="svg/ergo/bottom_plate.svg";
+screw_holes="svg/ergo/screw_holes.svg";
+
+// // Ortholinear 60 keyboard
+// key_plate="svg/ortholinear/key_plate.svg";
+// key_holes="svg/ortholinear/key_holes.svg";
+// bottom_plate="svg/ortholinear/bottom_plate.svg";
+// screw_holes="svg/ortholinear/screw_holes.svg";
+
+// // Planck-ish 48 keys
+// key_plate="svg/planck/bottom_plate.svg";
+// key_holes="svg/planck/key_holes.svg";
+// bottom_plate="svg/planck/bottom_plate.svg";
+// screw_holes="svg/planck/screw_holes.svg";
 
 // Parameters
 plateThickness=3;
@@ -44,23 +57,23 @@ difference() {
                     import(file = bottom_plate);
         }
     // TODO: clean up
-    // union() {
-    //     // USB connector hole
-    //     translate([6*20-1.5, 5.5*20, 3+1])
-    //         rotate([90,0,0]) linear_extrude(10)
-    //             offset(r=2) offset(delta=-2)
-    //                 square([15,8],false);
-    //     // TRRS connector hole
-    //     translate([7*20-5, 2.3*20, 3+1])
-    //         rotate([90,0,90]) linear_extrude(10)
-    //             offset(r=2) offset(delta=-2)
-    //                 square([13,8],false);
-    // }
-    // USB connector hole
-    translate([6.62*20, 5.5*20, 3+1])
-        rotate([90,0,0]) linear_extrude(30)
-            offset(r=2) offset(delta=-2)
-                square([13,8],false);
+    union() {
+        // USB connector hole
+        translate([6*20-1.5, 5.5*20, 3+1])
+            rotate([90,0,0]) linear_extrude(10)
+                offset(r=2) offset(delta=-2)
+                    square([15,8],false);
+        // TRRS connector hole
+        translate([7*20-5, 2.3*20, 3+1])
+            rotate([90,0,90]) linear_extrude(10)
+                offset(r=2) offset(delta=-2)
+                    square([13,8],false);
+    }
+    // // USB connector hole
+    // translate([6.62*20, 5.5*20, 3+1])
+    //     rotate([90,0,0]) linear_extrude(30)
+    //         offset(r=2) offset(delta=-2)
+    //             square([13,8],false);
 }
 
 // Bottom plate with screw holes
